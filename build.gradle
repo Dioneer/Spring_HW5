@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '8.0.1'
+    id 'org.springframework.boot' version '3.2.4'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id "com.ewerk.gradle.plugins.querydsl" version '1.0.10'
+}
+
+group 'Pegas'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+wrapper{
+    gradleVersion("8.6")
+}
+
+configurations {
+    querydsl.extendsFrom implementation, compileOnly, runtimeOnly
+}
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.postgresql:postgresql'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'com.querydsl:querydsl-jpa:5.1.0:jakarta'
+    annotationProcessor 'com.querydsl:querydsl-apt'
+}
+
+querydsl {
+    jpa=true
+    library = 'com.querydsl:querydsl-apt:5.1.0:jakarta'
+    querydslSourcesDir = "$buildDir/generated/sources/annotationProcessor/java/main"
+}
+
+initQuerydslSourcesDir.dependsOn clean
+
+compileQuerydsl{
+    options.annotationProcessorPath = configurations.querydsl
+}
+
+test {
+    useJUnitPlatform()
+}
