@@ -13,12 +13,13 @@ public class TaskCreateUpdateMapper implements Mapper<TaskCreateUpdateDto, Task>
         return Task.builder()
                 .description(taskCreateUpdateDto.getDescription())
                 .status(taskCreateUpdateDto.getStatus())
+                .createdDate(taskCreateUpdateDto.getCreatedDate()==null?LocalDateTime.now():taskCreateUpdateDto.getCreatedDate())
                 .build();
     }
 
     @Override
     public Task fromTo(TaskCreateUpdateDto taskCreateUpdateDto, Task task) {
-        task.setDescription(taskCreateUpdateDto.getDescription());
+        task.setDescription(taskCreateUpdateDto.getDescription().isBlank()?task.getDescription(): taskCreateUpdateDto.getDescription());
         task.setStatus(taskCreateUpdateDto.getStatus());
         task.setCreatedDate(LocalDateTime.now());
         return task;

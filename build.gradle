@@ -36,6 +36,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'com.querydsl:querydsl-jpa:5.1.0:jakarta'
+    implementation 'com.univocity:univocity-parsers:2.9.1'
     annotationProcessor 'com.querydsl:querydsl-apt'
 }
 

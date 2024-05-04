@@ -34,7 +34,6 @@ drop table tasks;]]></console>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="bd72e0ee-81c1-4db3-9a89-d880dcde31ea" object-ref="consoles/fill" />
       <object connection-id="bd72e0ee-81c1-4db3-9a89-d880dcde31ea" object-ref="schemas/public/tables/tasks" />
     </open-files>
   </component>
