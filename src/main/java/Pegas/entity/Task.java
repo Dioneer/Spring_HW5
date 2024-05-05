@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
@@ -25,12 +27,15 @@ public class Task implements BaseEntity<Long>{
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Status status;
-    @Temporal(TemporalType.TIMESTAMP)
+//    @CreationTimestamp
+//    @UpdateTimestamp
+//    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_date", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdDate;
 
-    @PrePersist
-    private void onCreate(){
-        createdDate = LocalDateTime.now();
-    }
+//    @PrePersist
+//    private void onCreate(){
+//            createdDate = LocalDateTime.now();
+//    }
+
 }

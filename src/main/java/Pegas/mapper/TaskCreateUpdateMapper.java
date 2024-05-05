@@ -10,11 +10,11 @@ import java.time.LocalDateTime;
 public class TaskCreateUpdateMapper implements Mapper<TaskCreateUpdateDto, Task>{
     @Override
     public Task fromTo(TaskCreateUpdateDto taskCreateUpdateDto) {
-        return Task.builder()
-                .description(taskCreateUpdateDto.getDescription())
-                .status(taskCreateUpdateDto.getStatus())
-                .createdDate(taskCreateUpdateDto.getCreatedDate()==null?LocalDateTime.now():taskCreateUpdateDto.getCreatedDate())
-                .build();
+        Task task = new Task();
+        task.setDescription(taskCreateUpdateDto.getDescription());
+        task.setStatus(taskCreateUpdateDto.getStatus());
+        task.setCreatedDate(taskCreateUpdateDto.getCreatedDate()==null ? LocalDateTime.now(): taskCreateUpdateDto.getCreatedDate());
+        return task;
     }
 
     @Override
