@@ -1,5 +1,6 @@
 package Pegas.service;
 
+import Pegas.aspect.TrackUserAction;
 import Pegas.dto.Qpredicates;
 import Pegas.dto.TaskCreateUpdateDto;
 import Pegas.dto.TaskFilter;
@@ -31,14 +32,15 @@ public class TaskService {
     private final TaskReadMapper taskReadMapper;
     private final TaskRepository taskRepository;
 
+    @TrackUserAction
     public List<TaskReadDto> findAll(){
         return taskRepository.findAll().stream().map(taskReadMapper::fromTo).toList();
     }
-
+    @TrackUserAction
     public List<TaskReadDto> findAllByFilter(TaskFilter taskFilter){
         return taskRepository.findAllByFilter(taskFilter).stream().map(taskReadMapper::fromTo).toList();
     }
-
+    @TrackUserAction
     public Page<TaskReadDto> findAllByFilterAndPageable(TaskFilter filter, Pageable pageable){
         var predicate = Qpredicates.builder()
                 .add(filter.description(), task.description::containsIgnoreCase)
@@ -46,7 +48,7 @@ public class TaskService {
                 .build();
         return taskRepository.findAll(predicate, pageable).map(taskReadMapper::fromTo);
     }
-
+    @TrackUserAction
     public List<TaskReadDto> findAllByStatus(Status status){
         return taskRepository.findByStatus(status).stream().map(taskReadMapper::fromTo).toList();
     }
@@ -55,6 +57,7 @@ public class TaskService {
         return taskRepository.findById(id).map(taskReadMapper::fromTo);
     }
 
+    @TrackUserAction
     @Transactional
     public TaskReadDto create(TaskCreateUpdateDto taskCreateUpdateDto){
         return Optional.of(taskCreateUpdateDto).map(taskCreateUpdateMapper::fromTo)
@@ -62,6 +65,8 @@ public class TaskService {
                 .map(taskReadMapper::fromTo)
                 .orElseThrow();
     }
+
+    @TrackUserAction
     @Transactional
     public boolean delete(Long id){
         return taskRepository.findById(id).map(i->{
@@ -70,6 +75,8 @@ public class TaskService {
             return true;
         }).orElse(false);
     }
+
+    @TrackUserAction
     @Transactional
     public TaskReadDto update(Long id, TaskCreateUpdateDto taskCreateUpdateDto){
         return taskRepository.findById(id).map(i->taskCreateUpdateMapper.fromTo(taskCreateUpdateDto, i))

@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/tasks_hw5
+    url: jdbc:postgresql://localhost:5433/postgres
     username: postgres
     password: 123456
     driver-class-name: org.postgresql.Driver
@@ -11,9 +11,8 @@ spring:
       format_sql: true
       hbm2ddl.auto: validate
 logging:
-  level:
-    root: WARN
-    Pegas.service.TaskService: ERROR
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} | %-5level | %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} | %-5level | %msg%n"
   file:
-    name: log.txt
-    path: /
+    name: ./log.txt
