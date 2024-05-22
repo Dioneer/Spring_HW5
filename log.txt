@@ -57,3 +57,64 @@
 2024-05-22 19:45:02 | INFO  | Initializing Servlet 'dispatcherServlet'
 2024-05-22 19:45:02 | INFO  | Completed initialization in 1 ms
 2024-05-22 19:45:02 | INFO  | Method public java.util.List Pegas.service.TaskService.findAll() with args [] was called
+2024-05-22 20:06:50 | INFO  | Starting ApplicationRunner using Java 17.0.10 with PID 10304 (D:\backup\4\Spring_HW5\build\classes\java\main started by fox in D:\backup\4\Spring_HW5)
+2024-05-22 20:06:50 | INFO  | No active profile set, falling back to 1 default profile: "default"
+2024-05-22 20:06:51 | INFO  | Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-22 20:06:51 | INFO  | Finished Spring Data repository scanning in 110 ms. Found 1 JPA repository interface.
+2024-05-22 20:06:51 | INFO  | BeanFactory id=7f0e6ba8-3d75-3554-9ebc-127db5179f3a
+2024-05-22 20:06:51 | WARN  | Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-05-22 20:06:51 | WARN  | Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-05-22 20:06:52 | INFO  | Tomcat initialized with port 8080 (http)
+2024-05-22 20:06:52 | INFO  | Starting service [Tomcat]
+2024-05-22 20:06:52 | INFO  | Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-22 20:06:52 | INFO  | Initializing Spring embedded WebApplicationContext
+2024-05-22 20:06:52 | INFO  | Root WebApplicationContext: initialization completed in 1504 ms
+2024-05-22 20:06:52 | INFO  | HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-22 20:06:52 | INFO  | HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-22 20:06:52 | INFO  | HHH000026: Second-level cache disabled
+2024-05-22 20:06:52 | INFO  | No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-22 20:06:52 | INFO  | HikariPool-1 - Starting...
+2024-05-22 20:06:52 | INFO  | HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7f030c72
+2024-05-22 20:06:52 | INFO  | HikariPool-1 - Start completed.
+2024-05-22 20:06:53 | INFO  | HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-22 20:06:53 | INFO  | Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-22 20:06:55 | INFO  | Cannot determine local hostname
+2024-05-22 20:06:56 | INFO  | Cannot determine local hostname
+2024-05-22 20:06:56 | INFO  | Eureka HTTP Client uses RestTemplate.
+2024-05-22 20:06:56 | WARN  | Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-05-22 20:06:56 | INFO  | Setting initial instance status as: STARTING
+2024-05-22 20:06:56 | INFO  | Initializing Eureka in region us-east-1
+2024-05-22 20:06:56 | INFO  | Resolving eureka endpoints via configuration
+2024-05-22 20:06:56 | INFO  | Disable delta property : false
+2024-05-22 20:06:56 | INFO  | Single vip registry refresh property : null
+2024-05-22 20:06:56 | INFO  | Force full registry fetch : false
+2024-05-22 20:06:56 | INFO  | Application is null : false
+2024-05-22 20:06:56 | INFO  | Registered Applications size is zero : true
+2024-05-22 20:06:56 | INFO  | Application version is -1: true
+2024-05-22 20:06:56 | INFO  | Getting all instance registry info from the eureka server
+2024-05-22 20:06:56 | INFO  | The response status is 200
+2024-05-22 20:06:56 | INFO  | Starting heartbeat executor: renew interval is: 30
+2024-05-22 20:06:56 | INFO  | InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-05-22 20:06:56 | INFO  | Discovery Client initialized at timestamp 1716397616942 with initial instances count: 0
+2024-05-22 20:06:56 | INFO  | Registering application APP1 with eureka with status UP
+2024-05-22 20:06:56 | INFO  | Saw local status change event StatusChangeEvent [timestamp=1716397616947, current=UP, previous=STARTING]
+2024-05-22 20:06:56 | INFO  | Tomcat started on port 8080 (http) with context path ''
+2024-05-22 20:06:56 | INFO  | Updating port to 8080
+2024-05-22 20:06:56 | INFO  | DiscoveryClient_APP1/localhost:app1:8080: registering service...
+2024-05-22 20:06:57 | INFO  | DiscoveryClient_APP1/localhost:app1:8080 - registration status: 204
+2024-05-22 20:06:58 | INFO  | Cannot determine local hostname
+2024-05-22 20:06:58 | INFO  | Started ApplicationRunner in 8.968 seconds (process running for 9.267)
+2024-05-22 20:07:25 | INFO  | Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-22 20:07:25 | INFO  | Initializing Servlet 'dispatcherServlet'
+2024-05-22 20:07:25 | INFO  | Completed initialization in 1 ms
+2024-05-22 20:07:25 | INFO  | Method public java.util.List Pegas.service.TaskService.findAll() with args [] was called
+2024-05-22 20:07:26 | INFO  | Disable delta property : false
+2024-05-22 20:07:26 | INFO  | Single vip registry refresh property : null
+2024-05-22 20:07:26 | INFO  | Force full registry fetch : false
+2024-05-22 20:07:26 | INFO  | Application is null : false
+2024-05-22 20:07:26 | INFO  | Registered Applications size is zero : true
+2024-05-22 20:07:26 | INFO  | Application version is -1: false
+2024-05-22 20:07:26 | INFO  | Getting all instance registry info from the eureka server
+2024-05-22 20:07:26 | INFO  | The response status is 200
+2024-05-22 20:11:56 | INFO  | Resolving eureka endpoints via configuration
+2024-05-22 20:14:11 | INFO  | Method public java.util.List Pegas.service.TaskService.findAll() with args [] was called
